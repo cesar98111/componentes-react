@@ -1,23 +1,30 @@
 import { useState } from "react"
 import Navbar from "./components/Navbar";
 import FromSendPost from "./components/FromSendPost";
+import ShowPost from "./components/ShowPost";
 const App =()=>{
+    const content={
+        titulo:"",
+        texto:""
+    }
     const user={
         nombre:"",
         contraseña:""
     }
+    const[post, setPost]=useState(content);
     const[Datas, setEstate]=useState(user);
+    const[send, setSend]=useState("");
     return(
         <>
-            <Navbar Datas={Datas} setData={setEstate} />
+            <Navbar Datas={Datas} setData={setEstate} setSend={setSend} />
             <div className="container">
                 <div className="row justify-content-evenly">
                     <div className="col-6">
-                        {(Datas.contraseña==="1234")?<FromSendPost Data={Datas}  />:null}
+                        {(Datas.contraseña==="1234")?<FromSendPost Data={Datas} Post={post} setPost={setPost} send={send} setSend={setSend} />:null}
                     </div>
                     
                     <div className="col-6">
-                        
+                        {(send==="a")?<ShowPost Data={post} name={Datas} />:null}
                     </div>
                 </div>
             </div>

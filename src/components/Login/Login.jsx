@@ -11,12 +11,14 @@ const Login =({Datos, setDatos})=>{
             ...user,
             [e.target.name]: e.target.value
         });
+        
     }
     const handleSubmit=(e)=>{
         if(user.contraseña!=="1234"){
             window.alert("la contraseña es invalida");
         }
-        setDatos(user)
+        e.preventDefault();
+        setDatos(user);
     }
     return(
           <div className="container" >
@@ -30,7 +32,7 @@ const Login =({Datos, setDatos})=>{
                     <input type="text" placeholder="name" name="nombre" onChange={handleinput} />
                 </div>
                 <div className="col-auto">
-                    <input type="password" name="contraseña" placeholder="contarseña" onChange={handleinput} />
+                    <input type="password" name="contraseña" placeholder="contraseña" onChange={handleinput} />
                 </div>
                 <div className="col-auto">
                     <button type="submit" className="btn btn-warning btn-sm">Login</button>

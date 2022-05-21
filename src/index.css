@@ -2,7 +2,7 @@
   margin-top: 10px;
   
 }
-.send-post-title{
+.post-title{
   margin-left: 10px;
   margin-bottom: -1px;
 }
@@ -42,4 +42,7 @@ nav{
 }
 .option{
   margin-top:3px;
+}
+p{
+  margin-left: 10px;
 }

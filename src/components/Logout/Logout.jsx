@@ -1,9 +1,9 @@
 import  PropTypes from 'prop-types'
-const Logout =({Datos, setDatos})=>{
+const Logout =({Datos, setDatos, setSend})=>{
     
     const returnn =(e)=>{
         e.preventDefault();
-        
+        setSend("");
         setDatos({
             ...Datos,
                 nombre:"",
@@ -29,6 +29,7 @@ const Logout =({Datos, setDatos})=>{
 }
 Logout.propTypes={
     Datos:PropTypes.object.isRequired,
-    setDatos:PropTypes.func.isRequired
+    setDatos:PropTypes.func.isRequired,
+    setSend:PropTypes.func.isRequired
 }
 export default Logout;
