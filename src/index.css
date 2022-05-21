@@ -6,7 +6,9 @@
   margin-left: 10px;
   margin-bottom: -1px;
 }
-
+.form-input{
+  width: 80%;
+}
 .form-send{
   margin-top: 10px;
   margin-left: 10px;
@@ -45,4 +47,24 @@ nav{
 }
 p{
   margin-left: 10px;
+}
+.error{
+    width: 200px;
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-iteration-count: inherit;
+    animation-direction: alternate;
+    margin-left:85%;
+  
+}
+@keyframes slidein {
+  from {
+    margin-left: 0%;
+    width: 200px;
+  }
+
+  to {
+    margin-left: 85%;
+    width: 200px;
+  }
 }

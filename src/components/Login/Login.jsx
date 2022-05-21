@@ -14,9 +14,7 @@ const Login =({Datos, setDatos})=>{
         
     }
     const handleSubmit=(e)=>{
-        if(user.contraseña!=="1234"){
-            window.alert("la contraseña es invalida");
-        }
+        
         e.preventDefault();
         setDatos(user);
     }

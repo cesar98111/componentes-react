@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
 
-const Navbar =({Datas,setData,setSend})=>{
+const Navbar =({Datas,setData,setSend,setPost,post})=>{
     
     
     return(
         <>
             
                 <nav className="bg-dark  container">
+                    {((Datas.contraseña!=="1234")&&(Datas.contraseña!==""))?<div className='alert alert-danger error' role="alert">credenciales no validas</div>:null}
                     <div className="row justify-content-beteewn">
                     <div className="nav col">
                         <ul className="nav nav-item option">
@@ -32,7 +33,7 @@ const Navbar =({Datas,setData,setSend})=>{
                         </ul>
                     </div>
                     <div className="nav col login">
-                        {(Datas.contraseña==='1234')?<Logout Datos={Datas} setDatos={setData} setSend={setSend}/>:(<><Login Datos={Datas} setDatos={setData} className="nav-item"/></>)}
+                        {(Datas.contraseña==='1234')?<Logout Datos={Datas} setDatos={setData} setSend={setSend} post={post} setpost={setPost}/>:(<><Login Datos={Datas} setDatos={setData} className="nav-item"/></>)}
                         
                     </div>
                     </div>
@@ -45,6 +46,8 @@ const Navbar =({Datas,setData,setSend})=>{
 Navbar.propTypes={
     Datas:PropTypes.object.isRequired,
     setData:PropTypes.func.isRequired,
-    setSend:PropTypes.object.isRequired
+    setSend:PropTypes.func.isRequired,
+    setPost:PropTypes.func.isRequired,
+    post:PropTypes.object.isRequired
 }
 export default Navbar;

@@ -21,7 +21,7 @@ const FromSendPost=({Data,Post,setPost,setSend})=>{
     return(
         <div className="border rounded shadow">
             <div className="bg-warning p-1 ">
-                <p className="post-title ">Autor:  <spam className="fw-bolder">{Data.nombre}</spam></p>
+                <p className="post-title ">Autor:  <span className="fw-bolder">{Data.nombre}</span></p>
             </div>
             <div>
                 <form onSubmit={handleSubmit}  className="form-send">
@@ -29,7 +29,7 @@ const FromSendPost=({Data,Post,setPost,setSend})=>{
                         <p>
                             <label htmlFor="titulo"  className="from-label fw-bold">Titulo</label>
                         </p>
-                        <input type="text" name="titulo" className="form-control" id="titulo" onChange={handleInputChange} />
+                        <input type="text" name="titulo" className="form-input" id="titulo" onChange={handleInputChange} />
                     </div>
                     <div className="mb-3">
                         <p>
@@ -52,7 +52,6 @@ FromSendPost.propTypes={
     Data:PropTypes.object.isRequired,
     Post:PropTypes.object.isRequired,
     setPost:PropTypes.func.isRequired,
-    send:PropTypes.bool.isRequired,
     setSend:PropTypes.func.isRequired
 }
 

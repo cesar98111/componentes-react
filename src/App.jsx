@@ -16,11 +16,11 @@ const App =()=>{
     const[send, setSend]=useState("");
     return(
         <>
-            <Navbar Datas={Datas} setData={setEstate} setSend={setSend} />
+            <Navbar Datas={Datas} setData={setEstate} setSend={setSend} setPost={setPost} post={post} />
             <div className="container">
                 <div className="row justify-content-evenly">
                     <div className="col-6">
-                        {(Datas.contraseña==="1234")?<FromSendPost Data={Datas} Post={post} setPost={setPost} send={send} setSend={setSend} />:null}
+                        {(Datas.contraseña==="1234")?<FromSendPost Data={Datas} Post={post} setPost={setPost} setSend={setSend} />:null}
                     </div>
                     
                     <div className="col-6">
