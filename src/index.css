@@ -48,23 +48,26 @@ nav{
 p{
   margin-left: 10px;
 }
+
 .error{
-    width: 200px;
-    animation-duration: 1s;
+    position: absolute;
+    
+    width: 100%;
+    text-align: center;
+    animation-duration: 2s;
     animation-name: slidein;
-    animation-iteration-count: inherit;
+    animation-iteration-count: 2;
     animation-direction: alternate;
-    margin-left:85%;
+    
   
 }
 @keyframes slidein {
-  from {
-    margin-left: 0%;
-    width: 200px;
+  0% {
+   transform:translateY(-100%);
   }
-
-  to {
-    margin-left: 85%;
-    width: 200px;
+  100%{
+    transform:translateY(-18%);
   }
+  
 }
+

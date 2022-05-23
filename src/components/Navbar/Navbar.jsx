@@ -8,35 +8,39 @@ const Navbar =({Datas,setData,setSend,setPost,post})=>{
     
     return(
         <>
-            
-                <nav className="bg-dark  container">
-                    {((Datas.contraseña!=="1234")&&(Datas.contraseña!==""))?<div className='alert alert-danger error' role="alert">credenciales no validas</div>:null}
-                    <div className="row justify-content-beteewn">
-                    <div className="nav col">
-                        <ul className="nav nav-item option">
-                            <li className="nav-item">
-                                <img className="img-fluid" src="./logo.png" alt="" />
-                            </li>
-                            <li className="nav-item">
-                                <a  className="nav-link text-white " href="#">Inicio</a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link text-white-50 " href="#">Acerca de</a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link text-white-50 " href="#">Contactos</a>
-                            </li>
+                
+                <nav className="bg-dark  container ">
+                    <div>
                         
-                            <li className="nav-item nav ">
+                        <div className="row justify-content-beteewn fix">
+                    
+                        <div className="nav col">
+                       
+                            <ul className="nav nav-item option">
+                                <li className="nav-item">
+                                    <img className="img-fluid" src="./logo.png" alt="" />
+                                </li>
+                                <li className="nav-item">
+                                    <a  className="nav-link text-white " href="#">Inicio</a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link text-white-50 " href="#">Acerca de</a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link text-white-50 " href="#">Contactos</a>
+                                </li>
+                        
+                                <li className="nav-item nav ">
                                 
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="nav col login">
-                        {(Datas.contraseña==='1234')?<Logout Datos={Datas} setDatos={setData} setSend={setSend} post={post} setpost={setPost}/>:(<><Login Datos={Datas} setDatos={setData} className="nav-item"/></>)}
-                        
-                    </div>
-                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                            <div className="nav col login">
+                                {(Datas.contraseña==='1234')?<Logout Datos={Datas} setDatos={setData} setSend={setSend} post={post} setpost={setPost}/>:(<><Login Datos={Datas} setDatos={setData} className="nav-item"/></>)}
+                            </div>
+                        </div>
+                    </div> 
+                    
                         
                
             </nav>
