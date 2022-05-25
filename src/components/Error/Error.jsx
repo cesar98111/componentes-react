@@ -9,12 +9,12 @@ const Error =({Data,setData})=>{
                 ...Data,
                 contraseña:""
             })
-        },3900)
+        },3800)
         
     },[])
     return(
         <>
-        {(loading)?<div className='alert alert-danger error ' role="alert">credenciales no validas</div>:null}
+        {(loading)?<div className='alert alert-danger error ' role="alert">Credenciales no válidas</div>:null}
         </>
         
     )

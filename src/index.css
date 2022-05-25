@@ -51,8 +51,6 @@ p{
 
 .error{
     position: absolute;
-    
-    width: 100%;
     text-align: center;
     animation-duration: 2s;
     animation-name: slidein;
@@ -63,9 +61,11 @@ p{
 }
 @keyframes slidein {
   0% {
-   transform:translateY(-100%);
+    width: 100%;
+   transform:translateY(-400%);
   }
   100%{
+    width: 100%;
     transform:translateY(-18%);
   }
   

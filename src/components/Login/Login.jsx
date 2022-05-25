@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PropTypes from 'prop-types';
-const Login =({Datos, setDatos})=>{
+const Login =({Datos, setDatos,first, setfirst})=>{
     const inituser ={
         nombre: Datos.nombre,
         contraseña: Datos.contraseña
@@ -17,6 +17,7 @@ const Login =({Datos, setDatos})=>{
         
         e.preventDefault();
         setDatos(user);
+        setfirst("a");
     }
     return(
           <div className="container" >
@@ -42,6 +43,8 @@ const Login =({Datos, setDatos})=>{
 }
 Login.propTypes={
     Datos:PropTypes.object.isRequired,
-    setDatos:PropTypes.func.isRequired
+    setDatos:PropTypes.func.isRequired,
+    setfirst:PropTypes.func.isRequired,
+    first:PropTypes.string.isRequired
 }
 export default Login
