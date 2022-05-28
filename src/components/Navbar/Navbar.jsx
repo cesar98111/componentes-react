@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
 
-const Navbar =({Datas,setData,setSend,setPost,post,setfirst,first})=>{
+const Navbar =({Datas,setData,setSend,setPost,post})=>{
     
     
     return(
@@ -36,7 +36,7 @@ const Navbar =({Datas,setData,setSend,setPost,post,setfirst,first})=>{
                             </ul>
                         </div>
                             <div className="nav col login">
-                                {((Datas.contraseña==='123')&&(Datas.nombre!==""))?<Logout Datos={Datas} setDatos={setData} setSend={setSend} post={post} setpost={setPost}/>:(<><Login Datos={Datas} setDatos={setData}first={first} setfirst={setfirst} className="nav-item"/></>)}
+                                {((Datas.contraseña==='123')&&(Datas.nombre!==""))?<Logout Datos={Datas} setDatos={setData} setSend={setSend} post={post} setpost={setPost} />:(<><Login Datos={Datas} setDatos={setData} className="nav-item"/></>)}
                             </div>
                         </div>
                     </div> 
@@ -53,7 +53,6 @@ Navbar.propTypes={
     setSend:PropTypes.func.isRequired,
     setPost:PropTypes.func.isRequired,
     post:PropTypes.object.isRequired,
-    setfirst:PropTypes.func.isRequired,
-    first:PropTypes.string.isRequired
+    
 }
 export default Navbar;

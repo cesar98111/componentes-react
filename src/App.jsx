@@ -6,26 +6,23 @@ import ContainerPost from "./components/ContainerPost";
 const App =()=>{
     const content={
         titulo:"",
-        texto:""
+        texto:"",
+        display:false
     }
     const user={
         nombre:"",
-        contraseña:""
+        contraseña:"",
+        send:false
     }
-    const [first, setfirst]=useState("");
+    
     const[post, setPost]=useState(content);
     const[Datas, setEstate]=useState(user);
-    const[send, setSend]=useState("");
+    
     return(
         <>
-            {((Datas.contraseña!=="123"&&Datas.contraseña!=="")||(Datas.nombre===""&&first==="a"))?<Error Datas={Datas} setData={setEstate}/>:null}
-            <Navbar Datas={Datas} setData={setEstate} setSend={setSend} setPost={setPost} post={post} setfirst={setfirst} first={first} />
-            <ContainerPost post={post} setPost={setPost} Datas={Datas} send={send} setSend={setSend}  setEstate={setEstate}/>
-            
-                 
-                
-            
-                
+            {((Datas.contraseña!=="123"&&Datas.contraseña!=="")||(Datas.nombre===""&&Datas.first===true))?<Error Datas={Datas} setData={setEstate}/>:null}
+            <Navbar Datas={Datas} setData={setEstate}  setPost={setPost} post={post}  />
+            <ContainerPost post={post} setPost={setPost} Datas={Datas}    setEstate={setEstate}/>     
         </>
     );
 }

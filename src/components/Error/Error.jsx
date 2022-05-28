@@ -7,7 +7,9 @@ const Error =({Data,setData})=>{
             setloading(false);
             setData({
                 ...Data,
-                contraseña:""
+                    nombre:"",
+                    contraseña:"",
+                    first:false
             })
         },3800)
         
@@ -20,7 +22,7 @@ const Error =({Data,setData})=>{
     )
 }
 Error.propTypes={
-    Data:PropTypes.object.isRequired,
-    setData:PropTypes.func.isRequired
+    Data:PropTypes.object,
+    setData:PropTypes.func
 }
 export default Error;

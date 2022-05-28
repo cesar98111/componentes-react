@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-const FromSendPost=({Data,Post,setPost,setSend})=>{
+const FromSendPost=({Data,Post,setPost})=>{
     const post={
         titulo:Post.titulo,
-        texto:Post.texto
+        texto:Post.texto,
+        send:Post.send
     }
     const [form, setform]=useState(post);
     const handleSubmit=(e)=>{
         e.preventDefault();
-        setSend("a");
-        setPost(form);
+        setPost({
+            ...form,
+                send:true
+        });
     }
     const handleInputChange=(e)=>{
         setform({
@@ -52,7 +55,7 @@ FromSendPost.propTypes={
     Data:PropTypes.object.isRequired,
     Post:PropTypes.object.isRequired,
     setPost:PropTypes.func.isRequired,
-    setSend:PropTypes.func.isRequired
+    
 }
 
 export default FromSendPost;
